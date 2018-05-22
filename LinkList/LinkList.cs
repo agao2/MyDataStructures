@@ -138,6 +138,44 @@ namespace LinkList
             }
             throw new KeyNotFoundException("Cannot find node with the specified data");
         }
+
+        public void DeleteHead()
+        {
+            if(this.Head == null)
+                throw new System.NullReferenceException("The head of the linked list is null");
+
+            if(this.Head.Next == null)
+            {
+                this.Head = null;
+                this.Tail = null;
+            }
+            else
+            {
+                this.Head = this.Head.Next;
+            }
+        }
+
+        public void DeleteTail()
+        {
+            if(this.Tail == null)
+                throw new System.NullReferenceException("The tail of the linked list is null");
+
+            if(this.Head == this.Tail)
+            {
+                this.Head = null;
+                this.Tail = null;
+            }
+            else
+            {
+                LLNode iterator = this.Head;
+                while(iterator.Next != Tail)
+                {
+                    iterator = iterator.Next;
+                }
+                this.Tail = iterator;
+                iterator.Next = null;
+            }
+        }
        
     }
 }

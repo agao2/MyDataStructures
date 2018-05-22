@@ -186,10 +186,78 @@ namespace LinkList.UnitTest
             Assert.AreEqual(foundNode.Data, "data");
         }
 
-        /**
-         * TODO:
-         * 1.Delete Head
-         * 2.Delete Tail
-         * */
+        [Test]
+        public void DeleteHead_NullHead_NullReferenceException()
+        {
+            LinkList linklist = new LinkList();
+
+            Assert.Throws<NullReferenceException>(() => linklist.DeleteHead());
+        }
+
+        [Test]
+        public void DeleteHead_OneNode_EqualsNull()
+        {
+            LinkList linklist = new LinkList();
+            LLNode firstNode = new LLNode();
+            linklist.AddToStart(firstNode);
+            linklist.DeleteHead();
+
+            var result = linklist.GetHead();
+
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void DeleteHead_MultipleNodes_EqualsNull()
+        {
+            LLNode firstNode = new LLNode();
+            LLNode secondNode = new LLNode();
+            LLNode thirdNode = new LLNode();
+            firstNode.Next = secondNode;
+            secondNode.Next = thirdNode;
+
+            LinkList newList = new LinkList(firstNode, thirdNode);
+            newList.DeleteHead();
+            var result = newList.GetHead();
+
+            Assert.AreSame(result, secondNode);
+        }
+
+        [Test]
+        public void DeleteHead_NullTail_NullReferenceException()
+        {
+            LinkList linklist = new LinkList();
+
+            Assert.Throws<NullReferenceException>(() => linklist.DeleteTail());
+        }
+
+        [Test]
+        public void DeleteTail_OneNode_EqualsNull()
+        {
+            LinkList linklist = new LinkList();
+            LLNode firstNode = new LLNode();
+            linklist.AddToStart(firstNode);
+            linklist.DeleteTail();
+
+            var result = linklist.GetTail();
+
+            Assert.IsNull(result);
+        }
+
+        [Test]
+        public void DeleteTail_MultipleNodes_EqualsNull()
+        {
+            LLNode firstNode = new LLNode();
+            LLNode secondNode = new LLNode();
+            LLNode thirdNode = new LLNode();
+            firstNode.Next = secondNode;
+            secondNode.Next = thirdNode;
+
+            LinkList newList = new LinkList(firstNode, thirdNode);
+            newList.DeleteTail();
+            var result = newList.GetTail();
+
+            Assert.AreSame(result, secondNode);
+        }
     }
 }
