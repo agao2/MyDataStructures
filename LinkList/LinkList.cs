@@ -9,6 +9,17 @@ namespace LinkList
     {
         public String Data;
         public LLNode Next;
+
+        public LLNode()
+        {
+            this.Data = "";
+        }
+
+        public LLNode(string Data)
+        {
+            this.Data = Data;
+        }
+        
     }
 
     public class LinkList
@@ -127,7 +138,6 @@ namespace LinkList
             }
             throw new KeyNotFoundException("Cannot find node with the specified data");
         }
-
-
+       
     }
 }
