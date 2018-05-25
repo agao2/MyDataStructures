@@ -3,7 +3,7 @@ using System;
 using System.Collections.Generic;
 
 
-namespace LinkList
+namespace LinkListModel
 {
     public class LLNode
     {

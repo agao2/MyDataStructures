@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using NUnit.Framework;
-using LinkList;
+using LinkListModel;
 
-namespace LinkList.UnitTest
+
+namespace LinkListModel.UnitTest
 {
     /**
      * UnitTest for the methods in LinkList class
