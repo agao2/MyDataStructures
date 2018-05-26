@@ -13,7 +13,7 @@ namespace VisualTests
         {
             Graph g = new Graph();
 
-            g.AddVertiex("v1");
+            g.AddVertex("v1");
             g.AddEdge("v1", "v1");
             Console.Write(g.ToString());
         }

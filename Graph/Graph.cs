@@ -46,8 +46,11 @@ namespace GraphModel
             return toString;
         }
 
-        public void AddVertiex(string vertex)
+        public void AddVertex(string vertex)
         {
+            if (vertex == null)
+                throw new NullReferenceException("Param(s) are null");
+
             if (Vertices.ContainsKey(vertex))
                 throw new ArgumentException("Duplicate vertexes are not allowed");
 
@@ -59,6 +62,9 @@ namespace GraphModel
         public void AddEdge(string vertex1, string vertex2)
         {
 
+            if(vertex1 == null || vertex2 == null)
+                throw new NullReferenceException("Param(s) are null");
+
             if (!Vertices.TryGetValue(vertex1, out int index1))
                 throw new ArgumentException("Vertex1 does not exist");
 
@@ -67,6 +73,11 @@ namespace GraphModel
 
             LinkList edges1 = _Graph[index1];
             LinkList edges2 = _Graph[index2];
+
+            if (edges1.GetHead() != null && edges1.Search(vertex2) != null)
+                throw new ArgumentException("Edge already exists");
+
+
             if(index1 != index2)
             {
                 edges1.AddToEnd(new LLNode() { Data = vertex2 });

@@ -7,9 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkList", "LinkList\LinkLi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LinkList.UnitTest", "LinkList.UnitTest\LinkList.UnitTest.csproj", "{12EDF978-EE74-4065-9398-C11B7ADFD1C0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph", "Graph\Graph.csproj", "{07BE0176-C451-496A-BF65-1EE2CCB6465E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Graph", "Graph\Graph.csproj", "{07BE0176-C451-496A-BF65-1EE2CCB6465E}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VisualTests", "VisualTests\VisualTests.csproj", "{B5DE15F1-72CC-4F92-BDF8-1A2BD0678AE3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Graph.UnitTest", "Graph.UnitTest\Graph.UnitTest.csproj", "{F785C8FE-699E-469D-ADF4-81BD2A8FBB4C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{B5DE15F1-72CC-4F92-BDF8-1A2BD0678AE3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B5DE15F1-72CC-4F92-BDF8-1A2BD0678AE3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B5DE15F1-72CC-4F92-BDF8-1A2BD0678AE3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F785C8FE-699E-469D-ADF4-81BD2A8FBB4C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F785C8FE-699E-469D-ADF4-81BD2A8FBB4C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F785C8FE-699E-469D-ADF4-81BD2A8FBB4C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F785C8FE-699E-469D-ADF4-81BD2A8FBB4C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

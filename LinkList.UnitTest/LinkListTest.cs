@@ -170,8 +170,8 @@ namespace LinkListModel.UnitTest
         {
             LinkList newList = new LinkList();
             newList.AddToStart(new LLNode());
-
-            Assert.Throws<KeyNotFoundException>(() => newList.Search("Doesn't Exist"));
+            var result = newList.Search("DOESN'T EXIST");
+            Assert.AreEqual(null, result);
         }
 
         [Test] 

@@ -136,7 +136,8 @@ namespace LinkListModel
                 else
                     Iterator = Iterator.Next;
             }
-            throw new KeyNotFoundException("Cannot find node with the specified data");
+
+            return null;
         }
 
         public void DeleteHead()
