@@ -6,16 +6,16 @@ namespace GraphModel
 {
 
     /**
-     * There are two common ways to represent a graph in code, one is a 2d array where the first row and column are vertices 
-     * and value at the coordinate of the two represent an endge.
+     * There are two common ways to represent a graph in code, one is a 2d array which stores all the edges for the vertices in this 2d array
      * The other common way is to use an array of linklists, where the elements in the array are vertices and each linklist entry at that
-     * index represents an edge
+     * index represents an edge to another vertex
      * 
-     * In this particular implmenetation, we wil be using an array of linklists
+     * In this particular implmenetation, it wil be similar to an array of linklists, it will utilize a list instead of an array so its dynamic at runtime
      * */
     public class Graph
     {
-       
+        // Dictionary is used to hold the index of a particular vertex, you would use that index to access the 
+        // appropriate linklist which will contain all the edges.
         private Dictionary<string,int> Vertices;
         private List<LinkList> _Graph;
 
@@ -25,7 +25,7 @@ namespace GraphModel
             _Graph = new List<LinkList>();
         }
 
-        public string ToString()
+        public override string ToString()
         {
             string toString = "";
             for(int i = 0; i < _Graph.Count; i++)
@@ -48,6 +48,9 @@ namespace GraphModel
 
         public void AddVertiex(string vertex)
         {
+            if (Vertices.ContainsKey(vertex))
+                throw new ArgumentException("Duplicate vertexes are not allowed");
+
             LinkList newList = new LinkList();
             _Graph.Add(newList);
             Vertices.Add(vertex, _Graph.Count - 1);
@@ -55,14 +58,11 @@ namespace GraphModel
 
         public void AddEdge(string vertex1, string vertex2)
         {
-            int index1;
-            int index2;
-            
-            // see if the two vertices exist
-            if (!Vertices.TryGetValue(vertex1, out index1))
+
+            if (!Vertices.TryGetValue(vertex1, out int index1))
                 throw new ArgumentException("Vertex1 does not exist");
 
-            if(!Vertices.TryGetValue(vertex2,out index2))
+            if (!Vertices.TryGetValue(vertex2,out int index2))
                 throw new ArgumentException("Vertex2 does not exist");
 
             LinkList edges1 = _Graph[index1];
@@ -76,10 +76,20 @@ namespace GraphModel
             {
                 edges1.AddToEnd(new LLNode() { Data = vertex2 });
             }
-
         }
 
-        
+        public LinkList GetEdges(string vertex)
+        {
+            if (!Vertices.TryGetValue(vertex, out int index))
+                throw new ArgumentException("Vertex1 does not exist");
+
+            return _Graph[index];
+        }
+
+        public string[] GetVertices()
+        {
+            return Vertices.Keys.ToArray();
+        }
   
     }
 }
