@@ -55,6 +55,7 @@
   <ItemGroup>
     <Compile Include="GraphUnitTest.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="QueueUnitTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

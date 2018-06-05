@@ -19,7 +19,6 @@ namespace LinkListModel
         {
             this.Data = Data;
         }
-        
     }
 
     public class LinkList
@@ -72,6 +71,7 @@ namespace LinkListModel
             }
         }
 
+       
         public void AddToEnd(LLNode NewNode)
         {
             if (NewNode == null)

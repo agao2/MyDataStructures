@@ -21,7 +21,7 @@ namespace GraphModel
     // To implement some of the searches, we will need a queue
     // for depthFirst, we can just use recursion which functions essentially like a stack
     // To create this class, use a link list
-    class Queue
+    public class Queue
     {
         private LinkList _queue;
 
@@ -42,6 +42,8 @@ namespace GraphModel
 
         public void Push(string s)
         {
+            if (s == null)
+                throw new ArgumentNullException();
             _queue.AddToEnd(new LLNode { Data = s });
         }
     }
