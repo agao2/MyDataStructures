@@ -177,6 +177,5 @@ namespace LinkListModel
                 iterator.Next = null;
             }
         }
-       
     }
 }
